@@ -1,0 +1,238 @@
+[
+	{
+		"id": "11fd70a5-64c5-4d6a-a2b9-cf61769e95e9",
+		"type": "ad-hoc",
+		"name": "test_name",
+		"version": 1,
+		"description": "some calcs",
+		"root": {
+			"type": "card",
+			"title": "Test Card",
+			"subtitle": "This card has a subtitle",
+			"margin": "small",
+			"child": {
+				"type": "group",
+				"direction": "horizontal",
+				"gap": "small",
+				"layout": "fill",
+				"children": [
+					{
+						"type": "group",
+						"direction": "vertical",
+						"children": [
+							{
+								"type": "input",
+								"controlId": "input1",
+								"inputType": "number",
+								"label": "Input #1",
+								"default": 4
+							},
+							{
+								"type": "input",
+								"controlId": "input2",
+								"inputType": "number",
+								"label": "Input #2"
+							},
+							{
+								"type": "input",
+								"controlId": "calc1",
+								"inputType": "number",
+								"label": "Calc #1 (Input #1 + Input #2)",
+								"disabled": true,
+								"expressions": {
+									"value": "input1 + input2"
+								}
+							}
+						]
+					},
+					{
+						"type": "group",
+						"direction": "vertical",
+						"children": [
+							{
+								"type": "input",
+								"controlId": "calc2",
+								"inputType": "number",
+								"label": "Calc #2 (2 * Calc #1)",
+								"disabled": true,
+								"expressions": {
+									"value": "2 * calc1"
+								}
+							},
+							{
+								"type": "input",
+								"controlId": "date1",
+								"inputType": "date",
+								"label": "Date"
+							},
+							{
+								"type": "input",
+								"controlId": "testLabelCalc",
+								"inputType": "text",
+								"expressions": {
+									"label": "date1 ? date1 + ': ' + calc2 : ''"
+								}
+							},
+							{
+								"type": "input",
+								"controlId": "dateTestCalc",
+								"inputType": "text",
+								"expressions": {
+									"value": "new Date('2022-01-01')"
+								}
+							}
+						]
+					}
+				]
+			}
+		}
+	},
+	{
+		"id": "1abc875c-da91-4b15-87c6-073e66d80466",
+		"type": "ad-hoc",
+		"name": "test_tabs",
+		"description": "some tabs",
+		"root": {
+			"type": "card",
+			"title": "Test Card",
+			"subtitle": "This card has a subtitle",
+			"margin": "small",
+			"child": {
+				"type": "tab-group",
+				"children": [
+					{
+						"type": "tab",
+						"title": "Tab #1",
+						"child": {
+							"type": "input",
+							"controlId": "test1",
+							"inputType": "text"
+						}
+					},
+					{
+						"type": "tab",
+						"title": "Tab #2",
+						"child": {
+							"type": "input",
+							"controlId": "test2",
+							"inputType": "text"
+						}
+					}
+				]
+			}
+		}
+	},
+	{
+		"id": "5923ac73-6733-4382-a903-7379ed92c1bd",
+		"type": "ad-hoc",
+		"name": "tariff",
+		"description": "add / edit tariff",
+		"root": {
+			"type": "card",
+			"expressions": {
+				"title": "($id ? 'Edit ' : 'New ') + 'Tariff'"
+			},
+			"margin": "small",
+			"child": {
+				"type": "group",
+				"direction": "vertical",
+				"gap": "none",
+				"children": [
+					{
+						"type": "input",
+						"inputType": "text",
+						"controlId": "name",
+						"label": "Name"
+					},
+					{
+						"type": "input",
+						"inputType": "text",
+						"controlId": "description",
+						"label": "Description"
+					},
+					{
+						"type": "group",
+						"direction": "horizontal",
+						"gap": "small",
+						"layout": "fill",
+						"children": [
+							{
+								"type": "input",
+								"inputType": "number",
+								"controlId": "start_value",
+								"label": "Start Value"
+							},
+							{
+								"type": "input",
+								"inputType": "number",
+								"controlId": "precision",
+								"label": "Precision",
+								"value": 6
+							}
+						]
+					},
+					{
+						"type": "group",
+						"direction": "horizontal",
+						"gap": "small",
+						"layout": "fill",
+						"children": [
+							{
+								"type": "input",
+								"inputType": "date",
+								"controlId": "effective_from",
+								"label": "Effective From"
+							},
+							{
+								"type": "input",
+								"inputType": "date",
+								"controlId": "expiry",
+								"label": "Expiry Date"
+							}
+						]
+					},
+					{
+						"type": "radio",
+						"controlId": "tariff_type",
+						"options": {
+							"manual": "Manual",
+							"indexed": "Indexed"
+						}
+					},
+					{
+						"type": "input",
+						"inputType": "select",
+						"controlId": "indexation",
+						"options": {
+							"option_1": "Option #1",
+							"option_2": "Option #2",
+							"option_3": "Option #3",
+							"option_4": "Option #4"
+						},
+						"label": "Indexation"
+					},
+					{
+						"type": "group",
+						"direction": "horizontal",
+						"gap": "small",
+						"layout": "fill",
+						"children": [
+							{
+								"type": "input",
+								"inputType": "month",
+								"controlId": "starting_value_month",
+								"label": "Starting Value Month"
+							},
+							{
+								"type": "input",
+								"inputType": "number",
+								"controlId": "index_percent",
+								"label": "Index Percent"
+							}
+						]
+					}
+				]
+			}
+		}
+	}
+]

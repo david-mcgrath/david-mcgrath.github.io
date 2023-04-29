@@ -1,0 +1,29 @@
+{
+    "id": "1",
+    "type": "static",
+    "name": "test navigation",
+    "description": "puts in a toolbar and a side nav, with basically nothing else going on",
+    "root": {
+        "type": "toolbar",
+        "title": "Test Toolbar",
+        "child": {
+            "type": "side-nav",
+            "items": [
+                {
+                    "key": "test",
+                    "label": "Test",
+                    "child": {
+                        "type": "card",
+                        "header": {
+
+                        },
+                        "content": {
+
+                        }
+                    }
+                }
+            ],
+            "default": "test"
+        }
+    }
+}

@@ -1,0 +1,81 @@
+{
+    "id": "987-654-321",
+    "type": "ad-hoc",
+    "name": "test calcs",
+    "description": "some calcs",
+    "root": {
+        "type": "group",
+        "direction": "horizontal",
+        "gap": "small",
+        "fill": true,
+        "children": [
+            {
+                "type": "group",
+                "direction": "vertical",
+                "children": [
+                    {
+                        "type": "input",
+                        "controlId": "input1",
+                        "inputType": "number",
+                        "label": "Input #1",
+                        "default": 4
+                    },
+                    {
+                        "type": "input",
+                        "controlId": "input2",
+                        "inputType": "number",
+                        "label": "Input #2"
+                    },
+                    {
+                        "type": "input",
+                        "controlId": "calc1",
+                        "inputType": "number",
+                        "label": "Calc #1 (Input #1 + Input #2)",
+                        "disabled": true,
+                        "expressions": {
+                            "value": "input1 + input2"
+                        }
+                    }
+                ]
+            },
+            {
+                "type": "group",
+                "direction": "vertical",
+                "children": [
+                    {
+                        "type": "input",
+                        "controlId": "calc2",
+                        "inputType": "number",
+                        "label": "Calc #2 (2 * Calc #1)",
+                        "disabled": true,
+                        "expressions": {
+                            "value": "2 * calc1"
+                        }
+                    },
+                    {
+                        "type": "input",
+                        "controlId": "date1",
+                        "inputType": "date",
+                        "label": "Date"
+                    },
+                    {
+                        "type": "input",
+                        "controlId": "testLabelCalc",
+                        "inputType": "text",
+                        "expressions": {
+                            "label": "date1 ? date1 + ': ' + calc2 : ''"
+                        }
+                    },
+                    {
+                        "type": "input",
+                        "controlId": "dateTestCalc",
+                        "inputType": "text",
+                        "expressions": {
+                            "value": "new Date('2022-01-01')"
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}
