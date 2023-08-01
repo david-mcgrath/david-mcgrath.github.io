@@ -70,7 +70,8 @@
 								"controlId": "testLabelCalc",
 								"inputType": "text",
 								"expressions": {
-									"label": "date1 ? date1 + ': ' + calc2 : ''"
+									"label": "date1 ? date1 + ': ' + calc2 : ''",
+									"hidden": "!!calc2"
 								}
 							},
 							{
@@ -78,7 +79,8 @@
 								"controlId": "dateTestCalc",
 								"inputType": "text",
 								"expressions": {
-									"value": "new Date('2022-01-01')"
+									"value": "new Date('2022-01-01')",
+									"hidden": "!!calc2"
 								}
 							}
 						]
